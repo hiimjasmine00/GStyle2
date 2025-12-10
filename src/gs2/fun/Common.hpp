@@ -90,7 +90,7 @@ namespace gs2::fun {
                 for (size_t ci=0; ci<children->count(); ++ci) {
                     auto c = typeinfo_cast<cocos2d::CCNode*>(children->objectAtIndex(ci));
                     try {
-                        auto desc = std::string(c->description());
+                        auto desc = fmt::format("<CCNode | Tag: {}>", c->getTag());
                         if (!token.empty() && desc.find(token) != std::string::npos) { next = c; break; }
                     } catch(...) { }
                 }
