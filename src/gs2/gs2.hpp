@@ -89,7 +89,7 @@ namespace gs2 {
     }
 
     inline std::string pathToString(const fs::path& p) {
-        try { return p.string(); } catch(...) { return std::string(); }
+        return geode::utils::string::pathToString(p);
     }
 
     inline std::vector<std::pair<fs::path, std::string>> getEnabled() {
